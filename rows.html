@@ -127,9 +127,12 @@ body {
         <table class="_table">
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Phone</th>
-              <th>Address</th>
+              <th>Item</th>
+              <th>Stock/Qty</th>
+              <th>Quantity</th>
+              <th>Rate</th>
+              <th>Discount</th>
+              <th>Total</th>
               <th width="50px">
                 <div class="action_container">
                   <button class="success" onclick="create_tr('table_body')">
@@ -139,17 +142,28 @@ body {
               </th>
             </tr>
           </thead>
+          <form action="">
           <tbody id="table_body">
             <tr>
               <td>
-                <input type="text" class="form_control" placeholder="Jhon Dhoe">
+                <input type="text" class="form_control" placeholder="Item">
               </td>
               <td>
-                <input type="text" class="form_control" placeholder="+880177x-xxxxxx">
+                <input type="text" class="form_control" placeholder="Stock/Qty">
               </td>
               <td>
-                <textarea class="form_control" placeholder="Enter Your Address..."></textarea>
+                <input type="text" class="form_control" placeholder="Quantity">
               </td>
+              <td>
+                <input type="text" class="form_control" placeholder="Rate">
+              </td>
+              <td>
+                <input type="text" class="form_control" placeholder="Discount">
+              </td>
+              <td>
+                <input type="text" class="form_control" placeholder="Total">
+              </td>
+   
               <td>
                 <div class="action_container">
                   <button class="danger" onclick="remove_tr(this)">
@@ -159,6 +173,7 @@ body {
               </td>
             </tr>
           </tbody>
+        </form>
         </table>
       </div>
 
