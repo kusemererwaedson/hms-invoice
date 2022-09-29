@@ -7,6 +7,8 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" />
 
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+     
     <title>JavaScript add rows to the table dynamically</title>
 <style>
     * {
@@ -20,6 +22,58 @@ body {
     background-color: #efefef;
     padding: 25px;
 }
+
+
+/* Section One*/
+
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+        /* Section three*/
+                table, thead, tbody, th, td, tr { 
+                        display: block; 
+                }
+                /* Section four*/
+                thead tr { 
+                        position: absolute;
+                        top: -9999px;
+                        left: -9999px;
+                }
+                
+                tr { border-bottom: 1px solid #ccc; }
+/* Section five*/
+                td { 
+                     border: none;
+                     border-bottom: 1px solid #eee; 
+                     position: relative;
+                     padding-left: 50%; 
+                }
+                td:before { 
+                        position: absolute;
+                        top: 3px;
+                        left: 6px;
+                        width: 45%; 
+                        padding-right: 10px; 
+                        white-space: nowrap;
+                        font-weight: bold;
+                }
+}
+
+/* Section seven*/
+        @media only screen
+        and (min-device-width : 320px)
+        and (max-device-width : 480px) {
+                body { 
+                        padding: 0; 
+                        margin: 0; 
+                        width: 320px; }
+                }
+/* Section eight*/
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+                body { 
+                        width: 495px; 
+                }
+        }
+
 
 .container {
     max-width: 900px;
@@ -163,6 +217,7 @@ body {
               <td>
                 <input type="text" class="form_control" placeholder="Total">
               </td>
+              
    
               <td>
                 <div class="action_container">
@@ -170,11 +225,27 @@ body {
                     <i class="fa fa-close"></i>
                   </button>
                 </div>
+              
               </td>
             </tr>
+     
           </tbody>
+   
         </form>
-        </table>
+        </table><br>
+        <table class="mx-auto">
+        <tbody id="table_body">
+          <tr>
+            <th width="50px">
+              <div class="action_container">
+                <button class="success" onclick="create_tr('table_body')">
+                  <i class="fa fa-plus"></i>
+                </button>
+              </div>
+            </th>
+          </tr>
+        </tbody>
+      </table>
       </div>
 
 
@@ -213,5 +284,8 @@ function remove_tr(This) {
     }
 }
     </script>
+
+
+ 
 </body>
 </html>
