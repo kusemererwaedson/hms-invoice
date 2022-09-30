@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>cms dashboard
+    </title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!----css3---->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <!--google material icon-->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+
+
+
+    <style>
+
+        @media only screen and (max-width: 400px) {
+            body {
+                background-color: lightblue;
+            }
+        }
+
+
+        /* Section One*/
+
+        @media only screen and (max-width: 760px),
+        (min-device-width: 768px) and (max-device-width: 1024px) {
+
+            /* Section three*/
+            table,
+            thead,
+            tbody,
+            th,
+            td,
+            tr {
+                display: block;
+            }
+
+            /* Section four*/
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+
+            tr {
+                border-bottom: 1px solid #ccc;
+            }
+
+            /* Section five*/
+            td {
+                border: none;
+                border-bottom: 1px solid #eee;
+                position: relative;
+                padding-left: 50%;
+            }
+
+            td:before {
+                position: absolute;
+                top: 3px;
+                left: 6px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+                font-weight: bold;
+            }
+        }
+
+        /* Section seven*/
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+            body {
+                padding: 0;
+                margin: 0;
+                width: 320px;
+            }
+        }
+
+        /* Section eight*/
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+            body {
+                width: 495px;
+            }
+        }
+
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background-color: lightblue;
+            margin: auto;
+            padding: 15px;
+            box-shadow: 0 2px 20px #0001, 0 1px 6px #0001;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        ._table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        ._table :is(th, td) {
+            border: 1px solid #0002;
+            padding: 8px 10px;
+        }
+
+        /* form field design start */
+        .form_control {
+            border: 1px solid #0002;
+            background-color: transparent;
+            outline: none;
+            padding: 8px 12px;
+            font-family: 1.2rem;
+            width: 100%;
+            color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+            transition: 0.3s ease-in-out;
+        }
+
+        .form_control::placeholder {
+            color: inherit;
+            opacity: 0.5;
+        }
+
+        .form_control:is(:focus, :hover) {
+            box-shadow: inset 0 1px 6px #0002;
+        }
+
+        /* form field design end */
+
+
+        .success {
+            background-color: #24b96f !important;
+        }
+
+        .warning {
+            background-color: #ebba33 !important;
+        }
+
+        .primary {
+            background-color: #259dff !important;
+        }
+
+        .secondery {
+            background-color: #00bcd4 !important;
+        }
+
+        .danger {
+            background-color: #ff5722 !important;
+        }
+
+        .action_container {
+            display: inline-flex;
+        }
+
+        .action_container>* {
+            border: none;
+            outline: none;
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px 14px;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+        }
+
+        .action_container>*+* {
+            border-left: 1px solid #fff5;
+        }
+
+        .action_container>*:hover {
+            filter: hue-rotate(-20deg) brightness(0.97);
+            transform: scale(1.05);
+            border-color: transparent;
+            box-shadow: 0 2px 10px #0004;
+            border-radius: 2px;
+        }
+
+        .action_container>*:active {
+            transition: unset;
+            transform: scale(.95);
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+
+    <div class="wrapper">
+
+
+        <div class="body-overlay"></div>
+
+
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3><img src="img/logo.png" class="img-fluid" /><span>Vishweb design</span></h3>
+            </div>
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#" class="dashboard"><i class="material-icons">dashboard</i><span>Appointment</span></a>
+                </li>
+
+                <div class="small-screen navbar-display">
+                    <li class="dropdown d-lg-none d-md-block d-xl-none d-sm-block">
+                        <a href="#homeSubmenu0" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                            <i class="material-icons">notifications</i><span> 4 notification</span></a>
+                        <ul class="collapse list-unstyled menu" id="homeSubmenu0">
+                            <li>
+                                <a href="#">You have 5 new messages</a>
+                            </li>
+                            <li>
+                                <a href="#">You're now friend with Mike</a>
+                            </li>
+                            <li>
+                                <a href="#">Wish Mary on her birthday!</a>
+                            </li>
+                            <li>
+                                <a href="#">5 warnings in Server Console</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="d-lg-none d-md-block d-xl-none d-sm-block">
+                        <a href="#"><i class="material-icons">apps</i><span>apps</span></a>
+                    </li>
+
+                    <li class="d-lg-none d-md-block d-xl-none d-sm-block">
+                        <a href="#"><i class="material-icons">person</i><span>user</span></a>
+                    </li>
+
+                    <li class="d-lg-none d-md-block d-xl-none d-sm-block">
+                        <a href="#"><i class="material-icons">settings</i><span>setting</span></a>
+                    </li>
+                </div>
+                <li class="">
+                    <a href="#" class="dashboard"><i class="material-icons">aspect_ratio</i><span>OPD</span></a>
+                </li>
+                <li class="">
+                    <a href="#" class="dashboard"><i class="material-icons">apps</i><span>  IPD</span></a>
+                </li>
+                <li class="">
+                    <a href="#" class="dashboard"><i class="material-icons">equalizer</i><span>Pathology</span></a>
+                </li>
+                <li class="">
+                    <a href="#" class="dashboard"><i class="material-icons">extension</i><span>Radiology</span></a>
+                </li>
+                <li class="">
+                    <a href="#" class="dashboard"><i class="material-icons">aspect_ratio</i><span>OPD</span></a>
+                </li>
+                <li class="">
+                    <a href="#" class="dashboard"><i class="material-icons">border_color</i><span>OPD</span></a>
+                </li>
+                <li class="">
+                    <a href="#" class="dashboard"><i class="material-icons">aspect_ratio</i><span>OPD</span></a>
+                </li>
+                <li class="">
+                    <a href="#" class="dashboard"><i class="material-icons">aspect_ratio</i><span>OPD</span></a>
+                </li>
+                <li class="">
+                    <a href="#" class="dashboard"><i class="material-icons">aspect_ratio</i><span>OPD</span></a>
+                </li>
+
+
+                <li class="dropdown">
+                    <a href="#pageSubmenu5" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="material-icons">border_color</i><span>forms</span></a>
+                    <ul class="collapse list-unstyled menu" id="pageSubmenu5">
+                        <li>
+                            <a href="#">Page 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 3</a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+
+
+        </nav>
+
+
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <div class="top-navbar">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+
+                        <button type="button" id="sidebarCollapse" class="d-xl-block d-lg-block d-md-mone d-none">
+                            <span class="material-icons">arrow_back_ios</span>
+                        </button>
+
+                        <a class="navbar-brand" href="#"> Dashboard </a>
+
+                        <button class="d-inline-block d-lg-none ml-auto more-button" type="button"
+                            data-toggle="collapse" data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="material-icons">more_vert</span>
+                        </button>
+
+                        <div class="collapse navbar-collapse d-lg-block d-xl-block d-sm-none d-md-none d-none"
+                            id="navbarSupportedContent">
+                            <ul class="nav navbar-nav ml-auto">
+                                <li class="dropdown nav-item active">
+                                    <a href="#" class="nav-link" data-toggle="dropdown">
+                                        <span class="material-icons">notifications</span>
+                                        <span class="notification">4</span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="#">You have 5 new messages</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">You're now friend with Mike</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Wish Mary on her birthday!</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">5 warnings in Server Console</a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <span class="material-icons">apps</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <span class="material-icons">person</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <span class="material-icons">settings</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+
+            <div class="main-content">
+
+                <div class="row">
+
+                <div class="container mt-3">
+                    <table class="_table">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Stock/Qty</th>
+                                <th>Quantity</th>
+                                <th>Rate</th>
+                                <th>Discount</th>
+                                <th>Total</th>
+                                <th width="50px">
+                                    <div class="action_container">
+                                        <button class="success" onclick="create_tr('table_body')">
+                                            <i class="fa fa-plus">Add</i>
+                                        </button>
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <form action="">
+                            <tbody id="table_body">
+                                <tr>
+                                    <td>
+                                        <input type="text" class="form_control" placeholder="Item">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form_control" placeholder="Stock/Qty">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form_control" placeholder="Quantity">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form_control" placeholder="Rate">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form_control" placeholder="Discount">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form_control" placeholder="Total">
+                                    </td>
+
+
+                                    <td>
+                                        <div class="action_container">
+                                            <button class="danger" onclick="remove_tr(this)">
+                                                <i class="fa fa-close">Remove</i>
+                                            </button>
+                                        </div>
+
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </form>
+                    </table><br>
+                    <table class="mx-auto">
+                        <tbody id="table_body">
+                            <tr>
+                                <th width="50px">
+                                    <div class="action_container">
+                                        <button class="success" onclick="create_tr('table_body')">
+                                            <i class="fa fa-plus">Add</i>
+                                        </button>
+                                    </div>
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <div class="row" style="height: 180px;">
+
+            </div>
+
+
+                <footer class="footer mt-2 bg-light">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <nav class="d-flex">
+                                    <ul class="m-0 p-0">
+                                        <li>
+                                            <button class="btn btn-primary"><a href="#">Discount</a></button>
+                                        </li>
+                                        <li>
+                                            <button class="btn btn-primary"><a href="#">TPA</a></button>
+                                        </li>
+                                     
+                                    
+                                    </ul>
+                                </nav>
+
+                            </div>
+                            <div class="col-md-5 mt-3">
+                               <ul>
+                                <li>
+                                    UGX 28,000
+                                   </li>
+                               </ul>
+                            </div>
+                            <div class="col-md-2 mt-3">
+                                <button class="btn btn-danger"><a href="#">Clear</a></button>
+                                <button class="btn btn-primary"><a href="#">Done</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+
+
+    <script>
+
+        function create_tr(table_id) {
+            let table_body = document.getElementById(table_id),
+                first_tr = table_body.firstElementChild
+            tr_clone = first_tr.cloneNode(true);
+
+            table_body.append(tr_clone);
+
+            clean_first_tr(table_body.firstElementChild);
+        }
+
+        function clean_first_tr(firstTr) {
+            let children = firstTr.children;
+
+            children = Array.isArray(children) ? children : Object.values(children);
+            children.forEach(x => {
+                if (x !== firstTr.lastElementChild) {
+                    x.firstElementChild.value = '';
+                }
+            });
+        }
+
+
+
+        function remove_tr(This) {
+            if (This.closest('tbody').childElementCount == 1) {
+                alert("You Don't have Permission to Delete This ?");
+            } else {
+                This.closest('tr').remove();
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+                $('#content').toggleClass('active');
+            });
+
+            $('.more-button,.body-overlay').on('click', function () {
+                $('#sidebar,.body-overlay').toggleClass('show-nav');
+            });
+
+        });
+
+
+
+
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>
